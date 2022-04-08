@@ -18,7 +18,7 @@ async function fetchAnswer(question) {
 
 export default function Home() {
   // States For answers and questions
-  const [answer, setAnswer] = useState("Ask and your answer shall appear here...");
+  const [answer, setAnswer] = useState("Ask me questions about a job you are hiring for... Or anything recruiting related...");
   const [question, setQuestion] = useState("");
 
   // Handler for asking question
@@ -35,7 +35,7 @@ export default function Home() {
         <h1 className="text-6xl text-center my-24 pt-12">
           <b>GPT</b> Answers
         </h1>
-        <h2 className="text-3xl text-center my-4">An Example Knowledge Base App Powered by GPT-3</h2>
+        <h2 className="text-3xl text-center my-4">An Example AI Recruiting Assistant</h2>
         <Form onSubmit={questionAskedHandler}>
           <div className="rounded-md shadow-sm -space-y-px pb-8">
             <Input
