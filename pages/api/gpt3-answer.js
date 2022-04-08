@@ -17,7 +17,7 @@ const documents = [
   "This is an example application that can be used to learn how to build apps using the OpenAI API.<|endoftext|>",
 ];
 
-const endpoint = "https://api.openai.com/v1/text_completion";
+const endpoint = "https://api.openai.com/v1/engines";
 
 // Middleware For Rate Limiting
 
