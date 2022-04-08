@@ -73,7 +73,7 @@ export default async function handler(req, res) {
         ["How old are you?", "I'm a day older than I was yesterday."],
         ["What languages do you know?", "I speak English and write code in Python."],
       ],
-      max_tokens: 15,
+      max_tokens: 100,
       temperature: 0,
       return_prompt: false,
       expand: ["completion"],
