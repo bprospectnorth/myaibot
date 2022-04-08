@@ -23,7 +23,7 @@ const endpoint = "https://api.openai.com/v1/answers";
 
 const apiLimiter = rateLimit({
   windowMs: 1 * 60 * 1000,
-  max: 6,
+  max: 60,
 });
 
 function runRateLimitMiddleware(req, res, fn) {
@@ -53,7 +53,7 @@ export default async function handler(req, res) {
     }
 
     // respond if the request length is too long
-    if (req.body.question.length > 150) {
+    if (req.body.question.length > 500) {
       res.json({ answer: "Sorry. That question is too long." });
     }
     // don't send questions that contain bad words
@@ -73,7 +73,7 @@ export default async function handler(req, res) {
         ["How old are you?", "I'm a day older than I was yesterday."],
         ["What languages do you know?", "I speak English and write code in Python."],
       ],
-      max_tokens: 100,
+      max_tokens: 1000,
       temperature: .7,
       return_prompt: false,
       expand: ["completion"],
