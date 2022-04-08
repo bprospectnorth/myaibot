@@ -73,7 +73,7 @@ export default async function handler(req, res) {
     return client
       .post(endpoint, data)
       .then((result) => {
-        res.json({ answer: result.data.json.['choices'][0]['text'] });
+        res.json({ answer: result.data.['choices'][0]['text'] });
       })
       .catch((err) => {
         // deal with API request errors
