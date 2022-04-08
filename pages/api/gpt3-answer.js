@@ -66,7 +66,7 @@ export default async function handler(req, res) {
       // "file": process.env.ANSWERS_FILE,
       documents: documents,
       question: req.body.question,
-      search_model: "ada",
+      search_model: "text-davinci-002",
       model: "text-davinci-002",
       examples_context: "My favorite programming language is Python.",
       examples: [
@@ -74,7 +74,7 @@ export default async function handler(req, res) {
         ["What languages do you know?", "I speak English and write code in Python."],
       ],
       max_tokens: 100,
-      temperature: 0,
+      temperature: .7,
       return_prompt: false,
       expand: ["completion"],
       stop: ["\n", "<|endoftext|>"],
