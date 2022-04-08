@@ -67,7 +67,7 @@ export default async function handler(req, res) {
       documents: documents,
       question: req.body.question,
       search_model: "ada",
-      model: "curie",
+      model: "text-davinci-002",
       examples_context: "My favorite programming language is Python.",
       examples: [
         ["How old are you?", "I'm a day older than I was yesterday."],
