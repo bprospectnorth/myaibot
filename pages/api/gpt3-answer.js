@@ -17,7 +17,7 @@ const documents = [
   "This is an example application that can be used to learn how to build apps using the OpenAI API.<|endoftext|>",
 ];
 
-const endpoint = "https://api.openai.com/v1/answers";
+const endpoint = "https://api.openai.com/v1/engines/text-davinci-002/completions";
 
 // Middleware For Rate Limiting
 
@@ -63,21 +63,12 @@ export default async function handler(req, res) {
     }
 
     const data = {
-      // "file": process.env.ANSWERS_FILE,
-      documents: documents,
-      question: req.body.question,
-      search_model: "text-davinci-002",
-      model: "text-davinci-002",
-      examples_context: "My favorite programming language is Python.",
-      examples: [
-        ["How old are you?", "I'm a day older than I was yesterday."],
-        ["What languages do you know?", "I speak English and write code in Python."],
-      ],
+      prompt: req.body.question,
       max_tokens: 1000,
       temperature: .7,
-      return_prompt: false,
-      expand: ["completion"],
-      stop: ["\n", "<|endoftext|>"],
+      top_p: 1,
+      frequency_penalty: 0,
+      presence_penalty: 0.6,
     };
     return client
       .post(endpoint, data)
