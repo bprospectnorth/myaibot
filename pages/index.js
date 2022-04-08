@@ -33,7 +33,7 @@ export default function Home() {
     <>
       <div className="container-xl mx-auto home-body ">
         <h1 className="text-6xl text-center my-24 pt-12">
-          <b>AI Recruiting Assistant</b> Answers
+          <b>AI Recruiting Assistant</b>
         </h1>
         <h2 className="text-3xl text-center my-4">An Example AI Recruiting Assistant</h2>
         <Form onSubmit={questionAskedHandler}>
